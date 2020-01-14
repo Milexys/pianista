@@ -1,6 +1,8 @@
 import React, { useState } from 'react';
+import { Link } from 'gatsby';
 import { Waypoint } from 'react-waypoint';
 import { BGImg, ScrollDiv } from './style.css';
+import Button from '../../Button';
 
 
 const Nino = () => {
@@ -9,10 +11,6 @@ const Nino = () => {
 
     const nextImg = () => {
         setCount(count + 1)
-    }
-
-    const befImg = () => {
-        setCount(count - 1)
     }
 
     return (
@@ -53,6 +51,9 @@ const Nino = () => {
                     </div>
                     <div>
                         <span>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Nesciunt similique explicabo repudiandae dolor excepturi, enim delectus, </span>
+                    </div>
+                    <div>
+                        <Link to="toca-la-melodia"><Button title="Continuar"></Button></Link>
                     </div>
                 </ScrollDiv>
             </BGImg>

@@ -7,7 +7,8 @@ height: 100%;
 padding-top: 70px;
 ul{
     width: 100%;
-    height: 100%;
+    height: 90%;
+    list-style: none;
     li{
     height: 20%;
     text-align: center;
@@ -15,6 +16,7 @@ ul{
         font-family: ${theme.Playfair};
         font-style: italic;
         font-size: 2.5rem;
+        font-weight: 600;
         color: white;
         @media (max-width: 800px){
             font-size: 2rem;
@@ -27,6 +29,9 @@ ul{
             background: white;
             margin: 2rem auto 0 auto;
         }
+    }
+    img{
+        width: 20px;
     }
   }
 }

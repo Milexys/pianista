@@ -6,6 +6,7 @@ export const ContainerAside = styled.div`
     height: 100vh;
     position: fixed;
     top: 0;
+    left: 0;
     z-index: 3;
     background-image: url(${image});
     background-position: center;

@@ -1,34 +1,24 @@
-import React, { Component } from 'react';
+import React, { useState } from 'react';
 import { Piano } from 'react-piano';
 import './piano.css';
 
-class PianoBrowne extends Component {
+const PianoBrowne = (props) => {
 
-  static defaultProps = {
-    notesRecorded: false,
+  const [notesRecorded, setNotesRecorded] = useState(false)
+
+  const onPlayNoteInput = () => {
+    setNotesRecorded(false);
   };
 
-  state = {
-    keysDown: {},
-  };
-
-  onPlayNoteInput = midiNumber => {
-    this.setState({
-      notesRecorded: false,
-    });
-  };
-
-  onStopNoteInput = (midiNumber, { prevActiveNotes }) => {
-    if (this.state.notesRecorded === false) {
-      this.recordNotes(prevActiveNotes);
-      this.setState({
-        notesRecorded: true,
-      });
+  const onStopNoteInput = (midiNumber, { prevActiveNotes }) => {
+    if (notesRecorded === false) {
+      recordNotes(prevActiveNotes);
+      setNotesRecorded(true);
     }
   };
 
-  recordNotes = (midiNumbers) => {
-    if (this.props.recording.mode !== 'RECORDING') {
+  const recordNotes = (midiNumbers) => {
+    if (props.record.mode !== 'RECORDING') {
       return;
     }
     const newEvents = midiNumbers.map(midiNumber => {
@@ -36,33 +26,30 @@ class PianoBrowne extends Component {
         midiNumber,
       };
     });
-    this.props.setRecording({
-      player: this.props.recording.player.concat(newEvents),
+    props.setRecord({
+      player: props.recording.player.concat(newEvents),
     });
   };
-  
-  render() {
-    const {
-      playNote,
-      stopNote,
-      recording,
-      setRecording,
-      ...pianoProps
-    } = this.props;
-    const { mode, currentEvents } = this.props.recording;
-    const activeNotes =
-      mode === 'PLAYING' ? currentEvents.map(event => event.midiNumber) : null;
-    return (
-      <Piano
-      playNote={this.props.playNote}
-      stopNote={this.props.stopNote}
-      onPlayNoteInput={this.onPlayNoteInput}
-      onStopNoteInput={this.onStopNoteInput}
+
+  const {
+    playNote,
+    stopNote,
+    record,
+    setRecord,
+    ...pianoProps
+  } = props;
+  const { mode, currentEvents } = props.record;
+  const activeNotes =
+  mode === 'PLAYING' ? currentEvents.map(event => event.midiNumber) : null;
+  return (
+    <Piano
+      playNote={props.playNote}
+      stopNote={props.stopNote}
+      onPlayNoteInput={onPlayNoteInput}
+      onStopNoteInput={onStopNoteInput}
       activeNotes={activeNotes}
       {...pianoProps}
-      />
-    )
-    }
-    
+    />
+  )
 }
 export default PianoBrowne;

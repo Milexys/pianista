@@ -14,15 +14,16 @@ export const Container = styled.div`
         padding: 1rem 3rem 0 3rem;
         p{
             color: ${theme.brown};
-            font-family: ${theme.Merriweather};
+            font-family: ${theme.Playfair};
             text-align: center;
-            font-weight: 600;
+            font-weight: 900;
+            font-style: italic;
+            font-size: 1.3rem;
         }
     }
     .partitura{
-        width: 90%;
+        width: 100%;
         height: 20%;
-        margin: auto;
         background-image: url(${partitura});
         background-position: center;
         background-repeat: no-repeat;
@@ -34,9 +35,9 @@ export const Container = styled.div`
         display: flex;
         justify-content: flex-end;
         padding: 0 2rem;
-        margin-bottom: 10%;
+        margin-bottom: 5%;
         img{
-            width: 80px;
+            width: 70px;
             &:hover{
                 cursor: pointer;
             }
@@ -44,19 +45,22 @@ export const Container = styled.div`
     }
 
     .container-piano{
-        width: 100%;
-        height: 30%;
+        width: 100vw;
+        height: 25%;
     }
-
+    .continuar{
+        width: 100%;
+        margin: 1rem 0;
+    }
     .texto-2{
         width: 100%;
         text-align: center;
         padding: 0 3rem;
         margin-top: 1rem;
         p{
-            font-size: 1rem;
-            font-family: ${theme.Merriweather};
-            font-weight: 600;
+            font-size: 1.5rem;
+            font-family: ${theme.Playfair};
+            font-weight: 400;
             font-style: italic;
             color: ${theme.darkBlue};
             &:after{

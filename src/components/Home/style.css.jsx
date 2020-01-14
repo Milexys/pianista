@@ -35,13 +35,7 @@ const Container = styled.main`
     }
     .boton-empezar{
         width: 100%;
-        height: 15%;
         padding-top: 1rem;
-        img{
-            display: block;
-            width: 250px;
-            margin: auto;
-        }
     }
 `
 const ContainerST = styled.div`

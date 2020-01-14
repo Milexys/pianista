@@ -1,7 +1,8 @@
 import React from 'react';
-import { Link } from 'gatsby';
+import { Link } from '@reach/router';
 import { ContainerNav } from './style.css';
 import Zoom from 'react-reveal/Zoom';
+import arrow from '../../../assets/SVG/flecha-hacia-abajo.svg'
 
 const Nav = () => {
     return (
@@ -22,6 +23,9 @@ const Nav = () => {
                     </li>
                     <li>
                         <Link to="epifania">Epifanía</Link>
+                    </li>
+                    <li>
+                        <img src={arrow} alt="arrow"/>
                     </li>
                 </ul>
             </Zoom>

@@ -2,8 +2,8 @@ import React from 'react';
 import { Link } from 'gatsby';
 import { Container, ContainerST } from './style.css';
 import felipeBrowne from '../../assets/1x/felipe-foto-2.png';
-import empezar from '../../assets/SVG/btn-empezar.svg'
 import Pulse from 'react-reveal/Pulse';
+import Button from '../Button';
 
 const Home = () => {
     return (
@@ -19,7 +19,7 @@ const Home = () => {
             </ContainerST>
             <div className="boton-empezar">
                 
-                <Link to='toca-la-melodia'><Pulse forever={true}><img src={empezar} alt="Botón de Empezar" /></Pulse></Link>
+                <Link to='toca-la-melodia'><Pulse forever={true}><Button title="Empezar" /></Pulse></Link>
                
             </div>
         </Container>

@@ -4,14 +4,13 @@ const ContainerHeader = styled.header`
     display: flex;
 	justify-content: space-between;
 	align-items: center;
-	position: fixed;
-	width: 100%;
+    position: fixed;
+    top: 0;
+	width: 100vw;
 	padding: 0 1.3rem;
 	z-index: 4;
-	top: 0;
 	background-color: ${props => props.active ? 'transparent' : 'white'};
 	height: 50px;
-    overflow: hidden;
     .logoLT{
         height: 100%;
         img {
